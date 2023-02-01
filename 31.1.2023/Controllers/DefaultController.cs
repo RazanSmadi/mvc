@@ -24,17 +24,10 @@ namespace _31._1._2023.Controllers
      
        public string img() {
 
-            return "<a href=\"download\"> <img src=\"../img/tree.jpeg\"></a>";
+            return "<a href=\"../img/tree.jpeg\" download><img src=\"../img/tree.jpeg\"></a>";
            
         }
 
-        public void download()
-        {
-
-            var imgPath = Server.MapPath("../img/tree.jpeg");
-            Response.AddHeader("Content-Disposition", "attachment;filename=DealerAdTemplate.png");
-            Response.WriteFile(imgPath);
-            Response.End();
-        }
+       
     }
 }
