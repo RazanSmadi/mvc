@@ -24,7 +24,7 @@ namespace _31._1._2023.Controllers
      
        public string img() {
 
-            return "<a href=\"../img/tree.jpeg\" download><img src=\"../img/tree.jpeg\"></a>";
+            return "<h1>click to download</h1><a href=\"../img/tree.jpeg\" download><img src=\"../img/tree.jpeg\" style='width:250px;height=250px;'></a>";
            
         }
 
