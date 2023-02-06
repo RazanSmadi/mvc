@@ -11,17 +11,40 @@ namespace _2._2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Person
     {
+        [Display(Name = "ID")]
         public int PersonID { get; set; }
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First name is required")]
+        [StringLength(12)]
         public string First_Name { get; set; }
+
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last name is required")]
+        [StringLength(12)]
         public string Last_Name { get; set; }
+
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress]
         public string E_mail { get; set; }
-        public Nullable<int> Age { get; set; }
-        public string Job_Title { get; set; }
-        public Nullable<bool> Gender { get; set; }
+
+        [RegularExpression("((079)|(078)|(077)){1}[0-9]{7}", ErrorMessage = "The number must be Jordanian")]
+
         public string Phone { get; set; }
+
+        [Range(18, 50)]
+        public Nullable<int> Age { get; set; }
+
+        [MaxLength(10)]
+        public string Job_Title { get; set; }
+
+        public Nullable<bool> Gender { get; set; }
         public string user_image { get; set; }
         public string Cv { get; set; }
     }
