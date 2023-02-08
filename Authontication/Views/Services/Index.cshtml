@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Authontication.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.S_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descrip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.img)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descrip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.img)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ServicesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ServicesID }) 
+
+            @if (User.IsInRole("admin")) {
+            @Html.ActionLink("Delete", "Delete", new { id = item.ServicesID })}
+        </td>
+    </tr>
+}
+
+</table>

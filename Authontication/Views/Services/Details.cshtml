@@ -1,0 +1,42 @@
+﻿@model Authontication.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.S_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.S_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descrip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descrip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.img)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ServicesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
